@@ -14,3 +14,9 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Test area
         run: pytest .
+      - run: systemctl start docker.service
+      - name: Build an image
+        run: docker build -t testnew -f dockerfiles/New .
+      - name: Run the container
+        run: docker run testnew
+
