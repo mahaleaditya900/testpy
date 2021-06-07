@@ -1,0 +1,14 @@
+name: Circle Area
+
+on: push
+
+jobs:
+  find-area:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Install python
+        uses: actions/setup-python@v2
+      - name: Calculate area
+        run: python find_area.py
